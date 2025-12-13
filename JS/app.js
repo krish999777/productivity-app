@@ -1,8 +1,16 @@
 import {display} from './render.js'
-import {addTask,deleteTask,clearTask} from './state.js'
-const body=document.querySelector('body')
-body.addEventListener('click',(click)=>{
-    console.log(click.target)
+import {getState,addTask,deleteTask,clearTask,toggleStatus} from './state.js'
+const container=document.querySelector('#tasks')
+container.addEventListener('click',(click)=>{
+    if(click.target.id==='delete-btn'){
+        deleteTask(click.target.parentElement.getAttribute('element-task-id'))
+        display()
+    }else if(click.target.id==='checkbox'){
+        const clickedId=click.target.parentElement.getAttribute('element-task-id')
+        const checkboxStatus=click.target.checked
+        toggleStatus(clickedId,checkboxStatus)
+        display()
+    }
 })
 const submitBtn=document.getElementById('add-task')
 const inputField=document.getElementById('input-field')
