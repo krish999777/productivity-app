@@ -1,5 +1,21 @@
 import {display} from './render.js'
-import {getState,addTask,deleteTask,clearTask,toggleStatus} from './state.js'
+import {getState,addTask,deleteTask,clearTask,toggleStatus,currentFilter,changeFilter} from './state.js'
+const allBtn=document.getElementById('all-btn')
+const completedBtn=document.getElementById('completed-btn')
+const pendingBtn=document.getElementById('pending-btn')
+allBtn.addEventListener('click',function(){
+    changeFilter('all')
+    display()
+})
+completedBtn.addEventListener('click',function(){
+    changeFilter('completed')
+    display()
+})
+pendingBtn.addEventListener('click',function(){
+    changeFilter('pending')
+    display()
+})
+
 const container=document.querySelector('#tasks')
 container.addEventListener('click',(click)=>{
     if(click.target.id==='delete-btn'){
@@ -23,4 +39,3 @@ submitBtn.addEventListener('click',()=>{
     count++
     inputField.value=""
 })
-

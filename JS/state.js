@@ -1,4 +1,14 @@
 let tasks=[]
+let filter='all'
+function currentFilter(){
+    return filter
+}
+function changeFilter(type){
+    if(type!='all'&&type!='completed'&&type!='pending'){
+        throw new error('Invalid Filter')
+    }
+    filter=type
+}
 function getState(){
     return [...tasks]
 }
@@ -21,4 +31,4 @@ function toggleStatus(id,state){
     })
 }
 
-export {getState,addTask,deleteTask,clearTask,toggleStatus}
+export {getState,addTask,deleteTask,clearTask,toggleStatus,currentFilter,changeFilter}
