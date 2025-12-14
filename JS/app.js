@@ -1,5 +1,5 @@
 import {display} from './render.js'
-import {getState,addTask,deleteTask,clearTask,toggleStatus,currentFilter,changeFilter} from './state.js'
+import {getState,addTask,deleteTask,clearTask,toggleStatus,currentFilter,changeFilter,changeEdit,getEdit,editText,cancelEdit,assignEdit} from './state.js'
 const allBtn=document.getElementById('all-btn')
 const completedBtn=document.getElementById('completed-btn')
 const pendingBtn=document.getElementById('pending-btn')
@@ -15,17 +15,30 @@ pendingBtn.addEventListener('click',function(){
     changeFilter('pending')
     display()
 })
-
 const container=document.querySelector('#tasks')
 container.addEventListener('click',(click)=>{
     if(click.target.id==='delete-btn'){
         deleteTask(click.target.parentElement.getAttribute('element-task-id'))
+        display()
+    }else if(click.target.id==='edit-btn'){
+        changeEdit(click.target.parentElement.getAttribute('element-task-id'))
+        display()
+    }else if(click.target.id==='cancel-btn'){
+        cancelEdit()
+        display()
+    }else if(click.target.id==='save-btn'){
+        assignEdit()
         display()
     }else if(click.target.id==='checkbox'){
         const clickedId=click.target.parentElement.getAttribute('element-task-id')
         const checkboxStatus=click.target.checked
         toggleStatus(clickedId,checkboxStatus)
         display()
+    }
+})
+container.addEventListener('input',(event)=>{
+    if(event.target.id==='edit-input-field'){
+        editText(event.target.value)
     }
 })
 const submitBtn=document.getElementById('add-task')
