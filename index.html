@@ -5,14 +5,18 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <button id="all-btn">All</button>
-        <button id="completed-btn">Completed</button>
-        <button id="pending-btn">Pending</button><br>
-        <input id="input-field" type="text" placeholder="task">
-        <button id="add-task">Add Task</button>
-            <ul  id="tasks">
+        <div class="filter-buttons">
+            <button class="filter" id="all-btn">All</button>
+            <button class="filter" id="completed-btn">Completed</button>
+            <button class="filter" id="pending-btn">Pending</button>
+        </div>
+        <div class="input-container">
+                <input  class="input" id="input-field" type="text" placeholder="task">
+                <button class="input" id="add-task">Add Task</button>
+        </div>
+        <ul id="tasks"class="tasks">
 
-            </ul>
+        </ul>
 
 
         <script type="module" src="/JS/app.js"></script>

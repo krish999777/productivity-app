@@ -63,5 +63,4 @@ function toggleStatus(id,state){
         return task
     })
 }
-
 export {getState,addTask,deleteTask,clearTask,toggleStatus,currentFilter,changeFilter,getEdit,changeEdit,editText,cancelEdit,assignEdit,getCurrentEdit}

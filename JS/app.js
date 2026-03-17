@@ -18,10 +18,10 @@ pendingBtn.addEventListener('click',function(){
 const container=document.querySelector('#tasks')
 container.addEventListener('click',(click)=>{
     if(click.target.id==='delete-btn'){
-        deleteTask(click.target.parentElement.getAttribute('element-task-id'))
+        deleteTask(click.target.parentElement.parentElement.getAttribute('element-task-id'))
         display()
     }else if(click.target.id==='edit-btn'){
-        changeEdit(click.target.parentElement.getAttribute('element-task-id'))
+        changeEdit(click.target.parentElement.parentElement.getAttribute('element-task-id'))
         display()
     }else if(click.target.id==='cancel-btn'){
         cancelEdit()
@@ -30,7 +30,7 @@ container.addEventListener('click',(click)=>{
         assignEdit()
         display()
     }else if(click.target.id==='checkbox'){
-        const clickedId=click.target.parentElement.getAttribute('element-task-id')
+        const clickedId=click.target.parentElement.parentElement.getAttribute('element-task-id')
         const checkboxStatus=click.target.checked
         toggleStatus(clickedId,checkboxStatus)
         display()

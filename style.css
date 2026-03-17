@@ -1,0 +1,139 @@
+:root{
+    --bg-main: #F8FAFC;   
+    --bg-surface: #FFFFFF;  
+    --bg-muted: #F1F5F9;       
+    --text-primary: #0F172A;  
+    --text-secondary: #475569; 
+    --text-muted: #94A3B8;     
+    --primary: #2563EB;    
+    --primary-hover: #1D4ED8;
+    --primary-soft: #DBEAFE; 
+    --success: #16A34A;       
+    --success-soft: #DCFCE7;
+
+    --warning: #F59E0B;        
+    --warning-soft: #FEF3C7;
+
+    --danger: #DC2626;        
+    --danger-soft: #FEE2E2; 
+    --border: #E2E8F0;
+    --shadow: rgba(15, 23, 42, 0.08);
+}
+body{
+    background-color:#F8FAFC;
+}
+.filter-buttons{
+    display:flex;
+    justify-content:center;
+}
+.filter-buttons>button{
+    background-color:#2563EB;
+    border:1px solid #E2E8F0;
+    padding:5px;
+    border-radius:15px;
+    width:100px;
+    color:white;
+    margin:20px 10px;
+    cursor:pointer;
+}
+.filter-buttons>button:hover{
+    background-color:#1D4ED8;
+}
+.input-container{
+    display:flex;
+    justify-content:Center;
+    align-items:center;
+}
+.input-container>button{
+    background-color:#16A34A;
+    border:1px solid #E2E8F0;
+    padding:5px;
+    border-radius:15px;
+    width:100px;
+    color:white;
+    cursor:pointer;
+    margin:20px 20px;
+}
+.input-container>input{
+    padding:10px;
+    border-radius:20px;
+    width:200px;
+    border:1px solid #E2E8F0;
+    box-shadow:1px 1px 0 0 rgba(15, 23, 42, 0.08);
+}
+.tasks{
+    display:flex;
+    flex-wrap:wrap;
+    width:75%;
+    margin:20px auto;
+    align-items:center;
+    justify-content:center;
+}
+.tasks>li{
+    display:flex;
+    flex-direction:column;
+    align-items:Center;
+    justify-content:center;
+    background-color:white;
+    padding:20px;
+    border:1px solid #E2E8F0;
+    min-width:250px;
+    min-height:250px;
+    border-radius:20px;
+    margin:0 50px;
+}
+.task-title{
+    font-size:30px;
+    font-weight:bold;
+    margin:10px;
+}
+.title-check{
+    display:flex;
+}
+.tasks-checkbox{
+    width:25px;
+}
+.task-status{
+    font-size:large;
+    margin:10px;
+}
+.tasks-buttons{
+    margin-top:10px;
+}
+.tasks-buttons>.delete{
+    background-color:#DC2626;
+    border:1px solid #E2E8F0;
+    padding:5px;
+    border-radius:15px;
+    width:100px;
+    color:white;
+    margin:20px 10px;
+    cursor:pointer;
+}
+.tasks-buttons>.edit{
+    background-color:#2563EB;
+    border:1px solid #E2E8F0;
+    padding:5px;
+    border-radius:15px;
+    width:100px;
+    color:white;
+    margin:20px 10px;
+    cursor:pointer;
+}
+.tasks-buttons>.save{
+    background-color:#16A34A;
+    border:1px solid #E2E8F0;
+    padding:5px;
+    border-radius:15px;
+    width:100px;
+    color:white;
+    margin:20px 10px;
+    cursor:pointer;
+}
+.edit-input{
+    padding:10px;
+    border-radius:20px;
+    width:200px;
+    border:1px solid #E2E8F0;
+    box-shadow:1px 1px 0 0 rgba(15, 23, 42, 0.08);
+}

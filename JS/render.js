@@ -14,12 +14,15 @@ function display(){
         tasks= unfiltered.filter(task=>!task.status)
     listEl.innerHTML=tasks.map(task=>{
         if(task.id===editId){
-            return(`<li element-task-id="${task.id}"><input id="edit-input-field" type="text" value="${getCurrentEdit()}">
-                    <button id="cancel-btn">Cancel</button><button id="save-btn">Save</button></li>`)
+            return(`<li element-task-id="${task.id}"><input class="edit-input"id="edit-input-field" type="text" value="${getCurrentEdit()}">
+                    <div class="tasks-buttons"><button class="delete" id="cancel-btn">Cancel</button><button class="save" id="save-btn">Save</button></div>
+                    </li>`)
         }
-        return( `<li element-task-id="${task.id}">Title:${task.title} Status:${task.status?'✅':'❌'}
-                <button id="delete-btn">Delete</button><button id="edit-btn">Edit</button>
-                <input type="checkbox" id="checkbox" ${task.status?'checked':''}></input></li>`) 
+        return( `<li element-task-id="${task.id}"><div class="title-check"><div class="task-title">${task.title}</div>
+                <input class="tasks-checkbox" type="checkbox" id="checkbox" ${task.status?'checked':''}></input></div>
+                <div class="task-status">Status:${task.status?'✅':'❌'}</div>
+                <div class="tasks-buttons"><button class="delete" id="delete-btn">Delete</button><button class="edit" id="edit-btn">Edit</button></div>
+                </li>`) 
     }).join(' ')
 }
 export {display}
